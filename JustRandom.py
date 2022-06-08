@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 @loader.tds
 class JustRandomMod(loader.Module):
-    """<b>🎲 Module for get random numbers from list</b>"""
+    """Module for get random numbers from list"""
     
     strings = {
         "name": "JustRandom",
@@ -32,7 +32,7 @@ class JustRandomMod(loader.Module):
         self.name = self.strings["name"]
 
     async def randintcmd(self, message):
-        """<from: int> <to: int> - <i>Random number from range</i>
+        """<from: int> <to: int> - Random number from range
         """
         
         try:
@@ -41,6 +41,6 @@ class JustRandomMod(loader.Module):
                 result = random.randint(int(args[0]), int(args[1]))
                 await utils.answer(message, self.strings["answer_randint"] + str(result) + "</b>")
             else:
-                await utils.answer(message, self.strings["args_error"].format("2")
+                await utils.answer(message, self.strings["args_error"].format("2"))
         except (BaseException) as err:
             await utils.answer(message, self.strings["error"] + "```" + str(err) + "```")
