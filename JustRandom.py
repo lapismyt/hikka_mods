@@ -1,5 +1,6 @@
 """
-Using and this module is free, but copypasting code only after allow from author (https://t.me/issississi)
+Licensed under GNU General Public License v3:
+https://github.com/lapismyt/hikka_mods/blob/main/LICENSE
 """
 
 __version__ = (1, 0, 5)
