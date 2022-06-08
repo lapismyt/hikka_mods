@@ -1,9 +1,9 @@
 # Modules for Hikka
 <ul>
-<li><b>JustRandom</b></li>
+<li><b>JustRandom 1.0.5</b></li>
 </ul>
 
-# JustRandom 1.0.5
+# JustRandom
 <b>Just tool for easily getting random numbers and other...</b><br />
 <i>Commands:</i>
 <ul>
