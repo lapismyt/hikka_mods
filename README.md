@@ -7,5 +7,5 @@
 <b>Just tool for easily getting random numbers and other...</b><br />
 <i>Commands:</i>
 <ul>
-<li><code>.randint <from: int> <to: int></code>  - <i>Random number from diapasone.</i></li>
+<li><code>.randint &lt;from: int&gt; &lt;to: int&gt;</code> - <i>Random number from diapasone.</i></li>
 </ul>
