@@ -1,5 +1,4 @@
 # Modules for Hikka
-List:
 <ul>
 <li><b>JustRandom</b></li>
 </ul>
