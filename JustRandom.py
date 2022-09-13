@@ -3,7 +3,7 @@ Licensed under GNU General Public License v3:
 https://github.com/lapismyt/hikka_mods/blob/main/LICENSE
 """
 
-# meta developer: @LapisCodes
+# meta developer: @LapisMods
 
 __version__ = (1, 0, 5)
 
