@@ -3,10 +3,11 @@ Licensed under GNU General Public License v3:
 https://github.com/lapismyt/hikka_mods/blob/main/LICENSE
 """
 
+# meta developer: @LapisCodes
+
 __version__ = (1, 0, 5)
 
 import logging
-import asyncio
 import random
 from .. import loader, utils
 
@@ -31,6 +32,7 @@ class JustRandomMod(loader.Module):
     def __init__(self):
         self.name = self.strings["name"]
 
+    @loader.command(ru_doc="<от: число> <до: число> - Случайное число из диапазона")
     async def randintcmd(self, message):
         """<from: int> <to: int> - Random number from range
         """
