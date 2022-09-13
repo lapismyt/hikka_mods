@@ -15,8 +15,9 @@ logger = logging.getLogger(__name__)
 
 @loader.tds
 class JustRandomMod(loader.Module):
+
     """Module for get random numbers from list"""
-    
+
     strings = {
         "name": "JustRandom",
         "answer_randint": "<b>🎰 Random number is... ",
@@ -34,9 +35,8 @@ class JustRandomMod(loader.Module):
 
     @loader.command(ru_doc="<от: число> <до: число> - Случайное число из диапазона")
     async def randintcmd(self, message):
-        """<from: int> <to: int> - Random number from range
-        """
-        
+        """<from: int> <to: int> - Random number from range"""
+
         try:
             args = utils.get_args(message)
             if len(args) == 2:
