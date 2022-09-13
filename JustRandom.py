@@ -5,7 +5,7 @@ https://github.com/lapismyt/hikka_mods/blob/main/LICENSE
 
 # meta developer: @LapisMods
 
-__version__ = (1, 0, 5)
+__version__ = (1, 0, 7)
 
 import logging
 import random
