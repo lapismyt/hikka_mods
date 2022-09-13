@@ -34,6 +34,7 @@ class JustRandomMod(loader.Module):
         self.name = self.strings["name"]
 
     @loader.command(ru_doc="<от: число> <до: число> - Случайное число из диапазона")
+    @loader.ratelimit
     async def randintcmd(self, message):
         """<from: int> <to: int> - Random number from range"""
 
