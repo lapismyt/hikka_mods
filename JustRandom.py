@@ -5,7 +5,7 @@ https://github.com/lapismyt/hikka_mods/blob/main/LICENSE
 
 # meta developer: @LapisMods
 
-__version__ = (1, 0, 7)
+__version__ = (1, 0, 8)
 
 import logging
 import random
@@ -20,12 +20,12 @@ class JustRandomMod(loader.Module):
 
     strings = {
         "name": "JustRandom",
-        "answer_randint": "<b>🎰 Random number is... ",
+        "answer_randint": "<b>🎰 Random number is... {0}</b>",
         "error": "<b>😢 Oops... I tried to help you, but error breaked my plans...</b>\n\n",
         "args_error": "<b>😢 Sorry, but this command accept only {0} args.</b>"}
 
     strings_ru = {
-        "answer_randint": "<b>🎰 И выпадает число... ",
+        "answer_randint": "<b>🎰 И выпадает число... {0}</b>",
         "error": "<b>😢 Упс... Я попытался помочь вам, но ошибка помешала моим планам...</b>\n\n",
         "args_error": "<b>😢 Простите, но данная команда принимает только {0} аргумент(а/ов).</b>"
     }
@@ -42,7 +42,7 @@ class JustRandomMod(loader.Module):
             args = utils.get_args(message)
             if len(args) == 2:
                 result = random.randint(int(args[0]), int(args[1]))
-                await utils.answer(message, self.strings["answer_randint"] + str(result) + "</b>")
+                await utils.answer(message, self.strings["answer_randint"].format(str(result)))
             else:
                 await utils.answer(message, self.strings["args_error"].format("2"))
         except (BaseException) as err:

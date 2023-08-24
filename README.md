@@ -1,6 +1,6 @@
 # Modules for Hikka
 <ul>
-<li><b>JustRandom 1.0.5</b></li>
+<li><b>JustRandom 1.0.7</b></li>
 </ul>
 
 # JustRandom
