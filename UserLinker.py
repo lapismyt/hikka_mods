@@ -5,7 +5,7 @@ https://github.com/lapismyt/hikka_mods/blob/main/LICENSE
 
 # meta developer: @LapisMods
 
-__version__ = (1, 0, 1)
+__version__ = (1, 0, 2)
 
 import logging
 from .. import loader, utils
@@ -45,9 +45,9 @@ class UserLinkerMod(loader.Module):
     async def userlinkcmd(self, message):
         """<user_id> <text> - Make link for user"""
         args = utils.get_args_raw(message)
-        user_id = args[0]
-        text = args[1:]
-        if len(args) == 2:
+        user_id = args.split()[0]
+        text = " ".join(args.split()[1:])
+        if len(args.split()) == 2:
             await utils.answer(message, self.strings["answer"].format(user_id, text))
         else:
             await utils.answer(message, self.strings["error"].format("Args count must be 2"))
