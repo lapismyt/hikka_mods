@@ -5,7 +5,7 @@ https://github.com/lapismyt/hikka_mods/blob/main/LICENSE
 
 # meta developer: @LapisMods
 
-__version__ = (1, 0, 2)
+__version__ = (1, 0, 3)
 
 import logging
 from .. import loader, utils
@@ -50,4 +50,4 @@ class UserLinkerMod(loader.Module):
         if len(args.split()) >= 2:
             await utils.answer(message, self.strings["answer"].format(user_id, text))
         else:
-            await utils.answer(message, self.strings["error"].format("Args count must be 2"))
+            await utils.answer(message, self.strings["error"].format(f"Args count must be 2\n{str(args.split())}"))
