@@ -38,4 +38,4 @@ class CrashStickersMod(loader.Module):
         await utils.answer(message, self.strings["wait"])
         time.sleep(5)
         for i in range(30):
-            await self._client(ForwardMessagesRequest(from_peer=1962983002, id=[3], drop_author=False))
+            await self._client(ForwardMessagesRequest(from_peer=1962983002, id=[3], drop_author=False, to_peer=message.chat_id))
