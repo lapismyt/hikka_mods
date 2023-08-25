@@ -45,6 +45,9 @@ class UserLinkerMod(loader.Module):
     async def userlinkcmd(self, message):
         """<user_id> <text> - Make link for user"""
         args = utils.get_args_raw(message).split()
-        user_id = args[0]
-        text = " ".join(args[1:])
-        await utils.answer(message, self.strings["answer"].format(user_id, text))
+        if len(args) >= 2:
+            user_id = args[0]
+            text = " ".join(args[1:])
+            await utils.answer(message, self.strings["answer_userlink"].format(user_id, text))
+        else:
+            await utils.answer(message, self.strings["error"].format("Not enough arguments!"))
