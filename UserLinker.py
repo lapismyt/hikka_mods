@@ -47,7 +47,7 @@ class UserLinkerMod(loader.Module):
         args = utils.get_args_raw(message)
         user_id = args.split()[0]
         text = " ".join(args.split()[1:])
-        if len(args.split()) == 2:
+        if len(args.split()) >= 2:
             await utils.answer(message, self.strings["answer"].format(user_id, text))
         else:
             await utils.answer(message, self.strings["error"].format("Args count must be 2"))
