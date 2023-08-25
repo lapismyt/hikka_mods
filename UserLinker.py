@@ -50,4 +50,5 @@ class UserLinkerMod(loader.Module):
         if len(args) >= 2:
             await utils.answer(message, self.strings["answer"].format(user_id, text))
         else:
-            await utils.answer(message, args)
+            await utils.answer(message, self.strings["error"].format("Not enough arguments"))
+            logger.error(args)
