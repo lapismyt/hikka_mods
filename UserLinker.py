@@ -35,7 +35,7 @@ class UserLinkerMod(loader.Module):
     async def getuseridcmd(self, message):
         """<reply> - Get user ID"""
         if hasattr(message, "reply_to"):
-            user_id = await message.get_reply_message().sender.id
+            user_id = (await message.get_reply_message()).sender.id
             await utils.answer(message, self.strings["answer_getid"].format(str(user_id)))
         else:
             await utils.answer(message, self.strings["error"].format("No reply!"))
@@ -44,7 +44,7 @@ class UserLinkerMod(loader.Module):
     @loader.ratelimit
     async def userlinkcmd(self, message):
         """<user_id> <text> - Make link for user"""
-        args = await utils.get_iargs_raw(message)
+        args = await utils.get_args_raw(message)
         user_id = args[0]
         text = args[1:]
         if len(args) == 2:
