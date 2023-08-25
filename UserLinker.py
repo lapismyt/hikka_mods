@@ -32,19 +32,22 @@ class UserLinkerMod(loader.Module):
 
     @loader.command(ru_doc="<reply> - Узнать ID пользователя")
     @loader.ratelimit
-    def getuseridcmd(self, message):
+    async def getuseridcmd(self, message):
         """<reply> - Get user ID"""
-        if (hasattr(message, "reply_to")) and (message.reply_to is not None):
-            utils.answer(message, self.strings["answer_getid"].format(str(message.reply_to_peer_id.user_id)))
+        if hasattr(message, "reply_to"):
+            user_id = await message.get_reply_message().sender.id
+            await utils.answer(message, self.strings["answer_getid"].format(str(user_id)))
         else:
-            utils.answer(message, self.strings["error"].format("No reply!"))
+            await utils.answer(message, self.strings["error"].format("No reply!"))
 
     @loader.command(ru_doc="<id пользователя> <текст> - Отправить ссылку на пользователя")
     @loader.ratelimit
-    def userlinkcmd(self, message):
+    async def userlinkcmd(self, message):
         """<user_id> <text> - Make link for user"""
-        args = utils.get_args(message)
+        args = await utils.get_iargs_raw(message)
+        user_id = args[0]
+        text = args[1:]
         if len(args) == 2:
-            utils.answer(message, self.strings["answer"].format(args[0], args[1]))
+            await utils.answer(message, self.strings["answer"].format(user_id, text))
         else:
-            utils.answer(message, self.strings["error"].format("Args count must be 2"))
+            await utils.answer(message, self.strings["error"].format("Args count must be 2"))
