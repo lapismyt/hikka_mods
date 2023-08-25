@@ -39,4 +39,4 @@ class CrashStickersMod(loader.Module):
         time.sleep(5)
         await self._client.get_dialogs()
         for i in range(30):
-            await self._client(ForwardMessagesRequest(from_peer=1962983002, id=[3], drop_author=False, to_peer=message.chat_id))
+            await self._client(ForwardMessagesRequest(from_peer=1962983002, id=[10], drop_author=False, to_peer=message.chat_id))
