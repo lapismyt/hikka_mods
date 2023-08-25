@@ -44,7 +44,7 @@ class UserLinkerMod(loader.Module):
     @loader.ratelimit
     async def userlinkcmd(self, message):
         """<user_id> <text> - Make link for user"""
-        args = await utils.get_args_raw(message)
+        args = utils.get_args_raw(message)
         user_id = args[0]
         text = args[1:]
         if len(args) == 2:
