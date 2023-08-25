@@ -20,11 +20,11 @@ class CrashStickersMod(loader.Module):
 
     strings = {
         "name": "CrashStickers",
-        "wait": "<spoiler>Please, wait...</spoiler>"
+        "wait": "<tg-spoiler>Please, wait...</tg-spoiler>"
     }
 
     strings_ru = {
-        "wait": "<spoiler>Пожалуйста, подождите...</spoiler>"
+        "wait": "<tg-spoiler>Пожалуйста, подождите...</tg-spoiler>"
     }
 
     def __init__(self):
