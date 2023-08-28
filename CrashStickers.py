@@ -12,7 +12,7 @@ from .. import loader, utils
 from hikkatl.tl.functions.messages import ForwardMessagesRequest
 from hikkatl.tl.functions.messages import GetDialogsRequest
 from hikkatl.tl.functions.messages import ImportChatInviteRequest
-from hiikatl.tl.functions.account import UpdateNotifySettingsRequest
+from hikkatl.tl.functions.account import UpdateNotifySettingsRequest
 import time
 import datetime
 
